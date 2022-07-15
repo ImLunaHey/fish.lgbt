@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  fish.lgbt:
+    image: imlunahey/fish.lgbt:latest
+    build: .
+    container_name: fish.lgbt
+    hostname: fish.lgbt
+    env_file: .env
+    restart: always
+    labels:
+      caddy: fish.lgbt
+      caddy.reverse_proxy: "{{upstreams 8000}}"
+
+networks:
+  default:
+    name: $MY_DOCKER_NETWORK
+    external: true
