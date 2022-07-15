@@ -10,7 +10,7 @@ services:
     restart: always
     labels:
       caddy: fish.lgbt
-      caddy.reverse_proxy: "{{upstreams 8000}}"
+      caddy.reverse_proxy: "{{upstreams 8080}}"
 
 networks:
   default:
